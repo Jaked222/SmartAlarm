@@ -21,17 +21,18 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        ContactAdapter ca = new ContactAdapter(createList(30));
+        AlarmAdapter ca = new AlarmAdapter(createList(30));
         recList.setAdapter(ca);
     }
+
     private List createList(int size) {
 
         List result = new ArrayList();
-        for (int i=1; i <= size; i++) {
-            ContactInfo ci = new ContactInfo();
-            ci.name = ContactInfo.NAME_PREFIX + i;
-            ci.surname = ContactInfo.SURNAME_PREFIX + i;
-            ci.email = ContactInfo.EMAIL_PREFIX + i + "@test.com";
+        for (int i = 1; i <= size; i++) {
+
+            AlarmInfo ci = new AlarmInfo();
+            ci.title = "sample title" + i;
+            ci.time = "sample time" + i;
 
             result.add(ci);
 

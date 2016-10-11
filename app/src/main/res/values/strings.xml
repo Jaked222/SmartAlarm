@@ -4,4 +4,5 @@
     <string name="surname">Surname</string>
     <string name="name">Name</string>
     <string name="contact_det">contact det</string>
+    <string name="add_alarm">Add Alarm</string>
 </resources>

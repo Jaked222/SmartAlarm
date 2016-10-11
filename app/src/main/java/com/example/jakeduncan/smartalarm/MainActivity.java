@@ -4,11 +4,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button alarmButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         AlarmAdapter ca = new AlarmAdapter(createList(30));
         recList.setAdapter(ca);
+
+        alarmButton =(Button)findViewById(R.id.alarm_button);
+        this.alarmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //make the button add menu items with fake alarm data
+            }
+        });
     }
 
     private List createList(int size) {

@@ -13,6 +13,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button alarmButton;
+    List alarmList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +26,16 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        AlarmAdapter ca = new AlarmAdapter(createList(30));
+        alarmList = createList(30);
+        AlarmAdapter ca = new AlarmAdapter(alarmList);
         recList.setAdapter(ca);
 
         alarmButton =(Button)findViewById(R.id.alarm_button);
         this.alarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //make the button add menu items with fake alarm data
+                //prompt user for time entry and title(this could just be made default)
+                //add time to list.
             }
         });
     }
@@ -52,4 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         return result;
     }
+
+
 }

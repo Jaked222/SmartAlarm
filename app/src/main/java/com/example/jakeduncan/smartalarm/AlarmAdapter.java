@@ -13,8 +13,8 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmViewHol
 
     private List<AlarmInfo> AlarmList;
 
-    public AlarmAdapter(List<AlarmInfo> contactList) {
-        this.AlarmList = contactList;
+    public AlarmAdapter(List<AlarmInfo> alarmList) {
+        this.AlarmList = alarmList;
     }
 
     @Override

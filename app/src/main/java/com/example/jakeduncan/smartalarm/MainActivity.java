@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements EditTimeDialog.Ed
         editTimeDialog.show(fm, "fragment_edit_time");
     }
     @Override
-    public void onFinishEditDialog(String inputText) {
-        Toast.makeText(this, "Hi, " + inputText, Toast.LENGTH_SHORT).show();
+    public void onFinishEditDialog(int hour, int minute) {
+        Toast.makeText(this, "hour: " + hour + "minute: " + minute, Toast.LENGTH_SHORT).show();
     }
 }

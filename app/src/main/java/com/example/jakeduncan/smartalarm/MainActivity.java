@@ -1,16 +1,18 @@
 package com.example.jakeduncan.smartalarm;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EditTimeDialog.EditTimeDialogListener {
 
     Button alarmButton;
     List alarmList;
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //prompt user for time entry and title(this could just be made default)
                 //add time to list.
+                showEditDialog();
             }
         });
     }
@@ -56,5 +59,13 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }
 
-
+    private void showEditDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        EditTimeDialog editTimeDialog = new EditTimeDialog();
+        editTimeDialog.show(fm, "fragment_edit_time");
+    }
+    @Override
+    public void onFinishEditDialog(String inputText) {
+        Toast.makeText(this, "Hi, " + inputText, Toast.LENGTH_SHORT).show();
+    }
 }

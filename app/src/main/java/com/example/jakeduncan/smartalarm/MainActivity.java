@@ -67,5 +67,6 @@ public class MainActivity extends AppCompatActivity implements EditTimeDialog.Ed
     @Override
     public void onFinishEditDialog(int hour, int minute) {
         Toast.makeText(this, "hour: " + hour + "minute: " + minute, Toast.LENGTH_SHORT).show();
+
     }
 }

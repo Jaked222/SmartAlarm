@@ -33,11 +33,12 @@ public class EditTimeDialog extends DialogFragment implements TimePicker.OnTimeC
         mTimePicker = (TimePicker) view.findViewById(timePicker);
         getDialog().setTitle("Enter Time");
 
-        Button button = (Button) view.findViewById(R.id.done_button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button doneButton = (Button) view.findViewById(R.id.done_button);
+        doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getDialog().dismiss();
+
             }
         });
 

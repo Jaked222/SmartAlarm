@@ -15,20 +15,21 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements EditTimeDialog.EditTimeDialogListener {
 
     Button alarmButton;
-    List alarmList;
+
+    RecyclerView recList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recList = (RecyclerView) findViewById(R.id.cardList);
+        recList = (RecyclerView) findViewById(R.id.cardList);
         recList.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recList.setLayoutManager(llm);
 
-        alarmList = createList(30);
+        List alarmList = createList(30);
         AlarmAdapter ca = new AlarmAdapter(alarmList);
         recList.setAdapter(ca);
 
@@ -36,8 +37,7 @@ public class MainActivity extends AppCompatActivity implements EditTimeDialog.Ed
         this.alarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //prompt user for time entry and title(this could just be made default)
-                //add time to list.
+               //prompt user for time entry
                 showEditDialog();
             }
         });
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity implements EditTimeDialog.Ed
         List result = new ArrayList();
         for (int i = 1; i <= size; i++) {
 
-            AlarmInfo ci = new AlarmInfo();
-            ci.title = "sample title" + i;
-            ci.time = "sample time" + i;
+            AlarmInfo ai = new AlarmInfo();
+            ai.title = "sample title" + i;
+            ai.time = "sample time" + i;
 
-            result.add(ci);
+            result.add(ai);
 
         }
 
